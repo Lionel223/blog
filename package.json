@@ -1,0 +1,23 @@
+{
+  "name": "react-blog",
+  "version": "1.0.0",
+  "description": "my_blog",
+  "main": "index.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
+  "scripts": {
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Lionel",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "~3.5.0",
+    "express": "~4.15.4",
+    "mongoose": "~4.11.7",
+    "nodemon": "~1.11.0"
+  }
+}

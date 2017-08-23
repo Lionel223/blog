@@ -1,0 +1,572 @@
+@import url(normalize.css);
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    height: 100%;
+}
+body{
+    position: relative;
+    margin: 0;
+    max-width: 100%;
+    min-height: 100%;
+}
+pre{
+    margin: 2px;
+    padding: 10px;
+    background-color: #bbbbbb;
+    border: 1px solid black;
+    font-family: monospace;    /*temp*/
+    font-size: 1.2em;
+}
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    *white-space:normal;
+}
+
+
+/*   navbar   */
+.navbar{
+    list-style-type:none;
+    margin:0;
+    padding: 0;
+    background-color: black;
+    overflow:hidden;
+}
+
+ul.navbar li{
+    float:left;
+}
+ul.navbar li.loginLink, 
+ul.navbar li.name, 
+ul.navbar li.addLink, 
+ul.navbar li.more{
+    float:right;
+}
+
+
+header>ul>li>a,
+.name,
+.home .homeLink,
+.about .aboutLink,
+.contact .contactLink,
+.tutorial .tutorialLink,
+.login .loginLink,
+.add .addLink {
+    display:block;
+    text-align:center;
+    padding:10px 20px;
+}
+.more, .drop_down {display:none;}
+.home .homeLink,    /*add bottom line*/
+.about .aboutLink,
+.contact .contactLink,
+.tutorial .tutorialLink,
+.login .loginLink,
+.add .addLink{
+    border-bottom:3px solid white;
+}
+ul.navbar li a, ul.navbar li{
+    color: white;
+    text-decoration: none;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+ul.navbar>li>a:hover{
+    background-color: rgb(93,43,78);
+}
+
+/*nav RWD*/
+@media (max-width:450px) {
+    header>ul>li>a,
+    .home .homeLink,
+    .about .aboutLink,
+    .contact .contactLink,
+    .tutorial .tutorialLink{
+        display:block;
+        text-align:center;
+        padding:10px 10px;
+    }
+}
+@media (max-width:750px) {
+    .loginLink, .name, .addLink, .add .addLink, .loginLink{
+        display: none;
+    }
+    .more{display: block; padding: 0px 10px 0px 0;}
+    .drop_down{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right:0;
+        display: block;
+    }
+    .more_nav{
+        background-color: black;
+        width: 8em;
+        display:block;
+    }
+    .more_nav a{color:white;text-decoration: none;}
+    .slide_nav{display: none;}
+}
+
+
+/*    topic    */
+.head_description{
+    margin:0;
+    max-width: 100%;
+    padding: 20px 0;
+    padding-left:30px;
+    background-color: rgb(93,43,78); 
+    background-image: -webkit-linear-gradient(right, rgb(93,43,78), rgb(8,2,50));
+}
+.head_description h1{
+    line-height: 0;
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+}
+/*    for all page end*/
+
+/* home page  */
+.home a{
+    text-decoration: none;
+}
+.home .main_page {
+    width: 80%;
+    margin: auto;
+}
+
+.home .main_article{
+    border: 1px black solid;
+    margin: 50px 0px;
+    position: relative;
+}
+.home .main_article h3{
+    background-color: #dddddd;
+    padding: 15px;
+    margin: 0px;
+}
+.home .main_article span{
+    background: url(../images/icon/time.png) no-repeat;
+    background-size: 15px;
+    margin-top: 3px;
+    padding-left: 20px;
+    float: right;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+.home .classification {
+    background: url(../images/icon/www.png) no-repeat;
+    background-size: 15px;
+    margin: 0 0 7px 15px;
+    padding: 0 0 7px 20px;
+}
+.home .head_description a{
+    color: white;
+}
+.home .article{
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.home .main_article a{
+    position: absolute;
+    right: 8px;
+    bottom: 12px;
+    display: block;
+    color: rgb(93,43,78);
+    background-color: #dddddd;
+    font-weight: bold;
+    padding: 3px;
+    border: 2px rgb(93,43,78) solid;
+    border-radius: 5px;
+    transition-property: background-color, color;
+    transition-duration: .3s;
+}
+.home .main_article a:hover{
+    color:white;
+    background-color: rgb(93,43,78); 
+}
+.home .head_description br{
+    clear: both;
+}
+
+
+/*    about page    */
+.about div.introduction{
+    margin: 0 auto;
+    width: 67%;
+    padding-bottom: 80px;
+    font-size: 1.2em;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+.about div.introduction a{
+    text-decoration: none;
+    color: rgba(0,0,255,.7);
+}
+.about div.introduction a:hover{
+    text-decoration:underline;
+}
+
+.about h2{
+    font-size: 2em;
+    font-weight: normal;
+    border-bottom: dotted 2px rgba(5,5,5,.5);
+    padding-bottom: 4px;    
+    margin: 25px 0;
+}
+.about table{
+    background-color: #eeeeee;
+    width: 75%;
+    margin-left: 30px;
+    border-collapse: collapse;
+}
+.about th{
+    font-weight: normal;
+    width: 30%;
+    padding: 5px 5px;
+}
+.about th:first-child{
+    width: 10%;
+    text-align: left;
+}
+.about tr:first-child th{
+    background-color: #cccccc;
+}
+
+/*    contact page    */
+.contact div.form{
+    margin: 0 auto;
+    width: 67%;
+    padding-bottom: 80px;
+    font-size: 1.2em;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+
+.contact h2{
+    font-size: 2em;
+    font-weight: normal;
+    border-bottom: dotted 2px rgba(5,5,5,.5);
+    padding-bottom: 4px;	
+    margin: 25px 0;
+}
+.contact label {
+    margin-bottom: 25px;	
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.contact input[type="text"], .contact textarea {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0,0,90,.3);
+    color: rgba(0,0,255,1);
+    width: 60%;
+    padding: 5px;
+}
+.contact input[type="text"]:focus, .contact textarea:focus{
+    background-color: #ffffff;
+
+}
+.contact input[type="submit"]  {
+    margin-left: 220px;
+    padding: 10px 25px;
+    font-size: 1em;
+    color: black;
+    background: rgb(0,102,153);
+    background: linear-gradient(to bottom, rgba(5,5,5,.1) 40%, rgba(255,255,255,.5));
+    background: -webkit-linear-gradient(to bottom, rgba(55,55,55,.1) 40%, rgba(255,255,255,.5));
+    border-radius: 5px;
+    box-shadow: 0 0 4px white;
+}
+
+
+/*    add && modify article page    */
+.add div.form, .modify div.form {
+    margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 120px;
+    font-size: 1.2em;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+.add div.form, .modify div.form{
+    width: 80%;
+}
+.add h2, .modify h2 {
+    font-size: 2em;
+    font-weight: normal;
+    padding-bottom: 4px;    
+    margin: 25px 0;
+}
+.add .form h2:first-child,
+.modify .form h2:first-child {
+    border-bottom: dotted 2px rgba(5,5,5,.5);
+}
+
+.add label, .modify label {
+    margin-bottom: 25px;    
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.add textarea, .modify textarea {
+    width: 786px;
+    max-width: 786px;
+    height: 267px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0,0,90,.3);
+    color: rgba(0,0,255,1);
+    height: 573px;
+}
+.add input[type="radio"],
+.modify input[type="radio"] {
+    display: inline-block;
+    padding-right: 5px;
+}
+.add input[type='text'],
+.modify input[type='text'] {
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.add input[type="submit"],
+.modify input[type="submit"] {
+    margin-left: 220px;
+    padding: 10px 25px;
+    font-size: 1em;
+    color: black;
+    background: rgb(0,102,153);
+    background: linear-gradient(to bottom, rgba(5,5,5,.1) 40%, rgba(255,255,255,.5));
+    background: -webkit-linear-gradient(to bottom, rgba(55,55,55,.1) 40%, rgba(255,255,255,.5));
+    border-radius: 5px;
+    box-shadow: 0 0 4px white;
+}
+
+/*    login && add article && modify page   */
+.login div.form{
+    margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 120px;
+    font-size: 1.2em;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+
+.login h2{
+    font-size: 2em;
+    font-weight: normal;
+    border-bottom: dotted 2px rgba(5,5,5,.5);
+    padding-bottom: 4px;	
+    margin: 25px 0;
+}
+
+.login label {
+    margin-bottom: 25px;	
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.login input[type="text"], 
+.login input[type="password"] {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0,0,90,.3);
+    color: rgba(0,0,255,1);
+    width: 30%;
+    padding: 5px;
+}
+
+.login input[type="text"]:focus, 
+.login input[type="password"]:focus {
+    background-color: #ffffff;
+
+}
+.login input[type="submit"] {
+    margin-left: 220px;
+    padding: 10px 25px;
+    font-size: 1em;
+    color: black;
+    background: rgb(0,102,153);
+    background: linear-gradient(to bottom, rgba(5,5,5,.1) 40%, rgba(255,255,255,.5));
+    background: -webkit-linear-gradient(to bottom, rgba(55,55,55,.1) 40%, rgba(255,255,255,.5));
+    border-radius: 5px;
+    box-shadow: 0 0 4px white;
+}
+
+
+/*    login end    */
+
+
+/*    tutorial page    */
+.tutorial div.contentWrapper{
+    display: flex;
+    align-items: stretch;
+    background-color:#222; 
+    margin: 0;
+}
+/*left bar*/
+.tutorial div.left_nav { 
+    color: white;
+    flex: 1;
+    text-align: center;
+    padding-bottom: 50px;
+    min-height: 1000px;
+}
+/*right content*/
+.tutorial div.main{
+    text-align: center;
+    flex: 3;
+    padding: 0px 5% 100px 5%;
+    background-image: linear-gradient(to bottom, rgb(176,194,213), white);
+}
+
+
+.tutorial .left_nav ul.left_bar li{
+    text-decoration: none;
+    list-style-type:none;
+    text-align: left;
+    margin:0;
+    padding: 0;
+    font-size: 20px;
+}
+/* 左側nav調整 */
+.tutorial .reveal *{display: none;}
+.tutorial .handle{display:block;}
+.tutorial .left_bar a{
+    text-decoration: none;
+    color: white;
+}
+.tutorial .slide_btn{
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    display: none;
+}
+
+@media (max-width:700px) {
+    div.contentWrapper{
+        display: block;
+        width: 100%;
+    }
+    .tutorial .left_nav{
+        position: fixed;
+        top: 0px;
+        z-index: 1;
+        background-color: #222;
+        width: 80%;
+        left: -80%;
+        -webkit-transition: width 1s;
+        transition: left 1s;
+    }
+    .tutorial .slide_btn{
+        display: block;
+        position: fixed;
+        background-color: #222;
+        border: 2px #222 solid;
+        border-left: none;
+        border-radius: 0 15px 15px 0;
+        color: white;
+        z-index: 1;
+        padding: 8px;
+        top: 55px;
+        left: 0;
+        -webkit-transition: width 1s;
+        transition: left 1s;
+    }
+    .tutorial .left_nav.in{left: 0;}
+    .tutorial .slide_btn.in{left: 80%;}
+    .tutorial div.main{
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+
+
+
+/*    tutorial end    */
+
+footer{
+    clear: both;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+footer p{    /*change font-family, add link(linkin, github)*/
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+    margin: 0 auto;
+    padding: 20px 0px 20px 200px;
+    display: inline-block;
+}
+
+footer img{
+    float: right;
+    margin-right: 30px;
+    margin-top: 13px;
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-duration: .7s;
+}
+footer img:hover{
+    transform: rotate(360deg);
+}
+
+
+
+
+/*main page*/
+@media (max-width:550px) {
+    .home .main_page{width: 90%;}
+}
+/*footer*/
+@media (max-width:550px) {
+    footer p{padding-left: 20px;}
+    .about table{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+/*about page*/
+@media (max-width:750px) {
+    .about div.introduction{width: 90%;}
+}
+/*contact page*/
+@media (max-width:750px) {
+    .contact div.form{width: 90%;}
+}
+
+/*login page*/
+@media (max-width:750px) {
+    .login input[type="submit"] {margin-left: 20px;}
+    .login div.form{width: 85%;}
+    .login input[type="text"],  .login input[type="password"] {width: 50%;}
+}
+@media (max-width:750px) {
+    .add input[type="submit"],
+    .modify input[type="submit"] {
+        margin-left: 20px;
+    }
+}
