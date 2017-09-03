@@ -9,13 +9,10 @@ import reducers from './reducers';
 import './style.css';
 
 import App from './components/App.js';
-// import registerServiceWorker from './registerServiceWorker';
 
-// const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
-    // <Provider store={createStoreWithMiddleware(reducers)}>
     <Provider store={store}>
         <App />
     </Provider>,

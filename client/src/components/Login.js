@@ -28,11 +28,6 @@ class Login extends React.Component {
         );
     }
 
-    // onSubmit(values) {
-    //     this.props.loginUser(values, () => {
-    //         this.props.history.push('/contact');
-    //     });
-    // }
 
     onSubmit(values) {
         this.props.loginUser(values);

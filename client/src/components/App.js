@@ -6,8 +6,6 @@ import * as actions from '../actions'
 
 import Header from './Header';
 import Footer from './Footer';
-// import Content from './Content';
-// import Footer from './Footer';
 
 import Login from './Login';
 
