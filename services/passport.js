@@ -7,7 +7,6 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((user, done) => {
-    // console.log(users);
     done(null, user.logined);
 });
 
@@ -22,9 +21,6 @@ passport.use(new LocalStrategy({
     if (user.password !== password) {
         return done(null, false, { message: 'Invalid password' });
     };
-    // console.log("Yo~~~username: " + username);
-    // console.log("Yo~~~password: " + password);
-
     user.logined = true;
     done(null, user);
 }));

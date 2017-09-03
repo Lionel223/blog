@@ -1,4 +1,4 @@
-@import url(normalize.css);
+/* @import url(normalize.css); */
 *{
     box-sizing: border-box;
     font-family: sans-serif;
@@ -149,16 +149,16 @@ ul.navbar>li>a:hover{
     margin: 0px;
 }
 .home .main_article span{
-    background: url(../images/icon/time.png) no-repeat;
+    /* background: url(../images/icon/time.png) no-repeat; */
     background-size: 15px;
     margin-top: 3px;
     padding-left: 20px;
     float: right;
-    font-size: 0.8em;
+    font-size: 0.8em; 
     font-weight: normal;
 }
 .home .classification {
-    background: url(../images/icon/www.png) no-repeat;
+    /* background: url(../images/icon/www.png) no-repeat; */
     background-size: 15px;
     margin: 0 0 7px 15px;
     padding: 0 0 7px 20px;
