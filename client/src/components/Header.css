@@ -1,0 +1,65 @@
+.navbar{
+    list-style-type:none;
+    margin:0;
+    padding: 0;
+    background-color: black;
+    overflow:hidden;
+}
+
+ul.navbar li{
+    float:left;
+}
+ul.navbar li.loginLink, 
+ul.navbar li.name, 
+ul.navbar li.addLink, 
+ul.navbar li.more{
+    float:right;
+}
+
+
+header>ul>li>a,
+.name,
+.homeLink,
+.aboutLink,
+.contactLink,
+.tutorialLink {
+    display:block;
+    text-align:center;
+    padding:10px 20px;
+}
+.more, .drop_down {display:none;}
+
+.active{
+    border-bottom:3px solid white;
+}
+ul.navbar li a, ul.navbar li{
+    color: white;
+    text-decoration: none;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+ul.navbar>li>a:hover{
+    background-color: rgb(93,43,78);
+}
+
+/* topic    */
+.head_description{
+    margin:0;
+    max-width: 100%;
+    padding: 20px 0;
+    padding-left:30px;
+    background-color: rgb(93,43,78); 
+    background-image: -webkit-linear-gradient(right, rgb(93,43,78), rgb(8,2,50));
+}
+.head_description h1{
+    line-height: 0;
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+}
+.head_description a{
+    color: white;
+}
+a{
+    text-decoration: none;
+}

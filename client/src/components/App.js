@@ -3,18 +3,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions'
 
-
 import Header from './Header';
 import Footer from './Footer';
 
-import Login from './Login';
-
-const Home = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Contact = () => <h2>Contact</h2>;
-const Tutorial = () => <h2>Tutorial</h2>;
-const Article = () => <h2>Article</h2>;
-
+import Login from './page/Login';
+import Home from './page/Home';
+import About from './page/About';
+import Contact from './page/Contact';
+import Tutorial from './page/Tutorial';
 
 
 class App extends React.Component {
@@ -24,7 +20,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <BrowserRouter>
+                <BrowserRouter forceRefresh>
                     <div>
                         <Header />
                         <Route exact path="/" component={Home} />
@@ -32,7 +28,7 @@ class App extends React.Component {
                         <Route exact path="/about" component={About} />
                         <Route exact path="/contact" component={Contact} />
                         <Route exact path="/tutorial" component={Tutorial} />
-                        <Route exact path="/tutorial/:id" component={Article} />
+                        {/* <Route exact path="/tutorial/:id" component={Article} /> */}
                         <Footer />
                     </div>
                 </BrowserRouter>

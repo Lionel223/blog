@@ -27,58 +27,7 @@ pre{
 }
 
 
-/*   navbar   */
-.navbar{
-    list-style-type:none;
-    margin:0;
-    padding: 0;
-    background-color: black;
-    overflow:hidden;
-}
-
-ul.navbar li{
-    float:left;
-}
-ul.navbar li.loginLink, 
-ul.navbar li.name, 
-ul.navbar li.addLink, 
-ul.navbar li.more{
-    float:right;
-}
-
-
-header>ul>li>a,
-.name,
-.home .homeLink,
-.about .aboutLink,
-.contact .contactLink,
-.tutorial .tutorialLink,
-.login .loginLink,
-.add .addLink {
-    display:block;
-    text-align:center;
-    padding:10px 20px;
-}
-.more, .drop_down {display:none;}
-.home .homeLink,    /*add bottom line*/
-.about .aboutLink,
-.contact .contactLink,
-.tutorial .tutorialLink,
-.login .loginLink,
-.add .addLink{
-    border-bottom:3px solid white;
-}
-ul.navbar li a, ul.navbar li{
-    color: white;
-    text-decoration: none;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-ul.navbar>li>a:hover{
-    background-color: rgb(93,43,78);
-}
-
-/*nav RWD*/
+/* nav RWD */
 @media (max-width:450px) {
     header>ul>li>a,
     .home .homeLink,
@@ -112,21 +61,7 @@ ul.navbar>li>a:hover{
 }
 
 
-/*    topic    */
-.head_description{
-    margin:0;
-    max-width: 100%;
-    padding: 20px 0;
-    padding-left:30px;
-    background-color: rgb(93,43,78); 
-    background-image: -webkit-linear-gradient(right, rgb(93,43,78), rgb(8,2,50));
-}
-.head_description h1{
-    line-height: 0;
-    font-size: 3em;
-    color: white;
-    font-weight: bold;
-}
+
 /*    for all page end*/
 
 /* home page  */
@@ -163,9 +98,7 @@ ul.navbar>li>a:hover{
     margin: 0 0 7px 15px;
     padding: 0 0 7px 20px;
 }
-.home .head_description a{
-    color: white;
-}
+
 .home .article{
     text-align: left;
     padding: 20px;
