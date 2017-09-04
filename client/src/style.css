@@ -181,7 +181,7 @@ pre{
 
 
 /*    add && modify article page    */
-.add div.form, .modify div.form {
+.modify div.form {
     margin: 0 auto;
     width: 50%;
     margin: 0 auto;
@@ -189,21 +189,21 @@ pre{
     font-size: 1.2em;
     font-family:Tahoma, Geneva, sans-serif;
 }
-.add div.form, .modify div.form{
+.modify div.form{
     width: 80%;
 }
-.add h2, .modify h2 {
+.modify h2 {
     font-size: 2em;
     font-weight: normal;
     padding-bottom: 4px;    
     margin: 25px 0;
 }
-.add .form h2:first-child,
+
 .modify .form h2:first-child {
     border-bottom: dotted 2px rgba(5,5,5,.5);
 }
 
-.add label, .modify label {
+.modify label {
     margin-bottom: 25px;    
     display: inline-block;
     width: 20%;
@@ -213,7 +213,7 @@ pre{
     margin-top: 5px;
     font-weight: bold;
 }
-.add textarea, .modify textarea {
+.modify textarea {
     width: 786px;
     max-width: 786px;
     height: 267px;
@@ -223,12 +223,10 @@ pre{
     color: rgba(0,0,255,1);
     height: 573px;
 }
-.add input[type="radio"],
 .modify input[type="radio"] {
     display: inline-block;
     padding-right: 5px;
 }
-.add input[type='text'],
 .modify input[type='text'] {
     border-radius: 10px;
     border: none;
@@ -236,7 +234,6 @@ pre{
     width: 100%;
 }
 
-.add input[type="submit"],
 .modify input[type="submit"] {
     margin-left: 220px;
     padding: 10px 25px;

@@ -1,47 +1,57 @@
-.Login_Form {
+div.form {
     margin: 0 auto;
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 120px;
     font-size: 1.2em;
     font-family:Tahoma, Geneva, sans-serif;
 }
 
-.Login_Form h2{
+.form h2{
     font-size: 2em;
     font-weight: normal;
-    border-bottom: dotted 2px rgba(5,5,5,.5);
-    padding-bottom: 4px;	
+    padding-bottom: 4px;    
     margin: 25px 0;
+    border:0;
+}
+.form h2:first-child {
+    border-bottom: dotted 2px rgba(5,5,5,.5);
 }
 
-.Login_Form label {
-    margin-bottom: 25px;	
+.form label {
+    margin-bottom: 25px;    
     display: inline-block;
-    width: 30%;
+    width: 20%;
     vertical-align: top;
     text-align: right;
     margin-right: 20px;
     margin-top: 5px;
     font-weight: bold;
 }
-
-.Login_Form input[type="text"], 
-.Login_Form input[type="password"] {
+.form textarea {
+    padding: 10px;
+    width: 786px;
+    max-width: 786px;
+    height: 267px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgba(0,0,0);
+    color: rgba(0,0,255,1);
+    height: 573px;
+}
+.form input[type="radio"] {
+    display: inline-block;
+    padding-right: 5px;
+}
+.form input[type='text'] {
     border-radius: 10px;
     border: none;
-    background-color: rgba(0,0,90,.3);
-    color: rgba(0,0,255,1);
-    width: 30%;
     padding: 5px;
+    width: 100%;
+    background-color: white;
 }
 
-.Login_Form input[type="text"]:focus, 
-.Login_Form input[type="password"]:focus {
-    background-color: #ffffff;
-
-}
-.Login_Form input[type="submit"] {
+.form input[type="submit"] {
     margin-left: 220px;
     padding: 10px 25px;
     font-size: 1em;

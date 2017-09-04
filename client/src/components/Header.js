@@ -21,7 +21,7 @@ class Header extends React.Component {
             default:
                 return ([
                     <li key='1' className="loginLink"><Link to="/api/logout">sign out</Link></li>,                    
-                    <li key='2' className="addLink"><NavLink to="/users/add_article">add article</NavLink></li>,
+                    <li key='2' className="addLink"><NavLink to="/add_article">add article</NavLink></li>,
                     <li key='3' className="name">Welcome!{this.props.auth}</li>
                 ]);
         }

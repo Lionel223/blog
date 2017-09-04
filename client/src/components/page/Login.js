@@ -32,7 +32,6 @@ class Login extends React.Component {
         );
     }
 
-
     onSubmit(values) {
         this.props.loginUser(values);
     }
@@ -41,12 +40,11 @@ class Login extends React.Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <div className="form">
+            <div className="Login_Form">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <Field
                         name="username"
-                        value="test"
                         component={this.renderUsernameField}
                     />
                     <Field

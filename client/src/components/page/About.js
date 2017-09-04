@@ -18,30 +18,32 @@ class About extends React.Component {
                 <hr />
                 <h3>學歷</h3>
                 <table>
-                    <tr>
-                        <th>學歷</th>
-                        <th>學校名稱</th>
-                        <th>系所</th>
-                        <th>時間</th>
-                    </tr>
-                    <tr>
-                        <th>碩士</th>
-                        <th>國立中興大學</th>
-                        <th>物理所 畢業</th>
-                        <th>2013/9~2015/6</th>
-                    </tr>
-                    <tr>
-                        <th>學士</th>
-                        <th>國立高雄師範大學</th>
-                        <th>物理學系 畢業</th>
-                        <th>2009/9~2013/6</th>
-                    </tr>
-                    <tr>
-                        <th>高中</th>
-                        <th>台中一中</th>
-                        <th></th>
-                        <th>2006/9~2009/6</th>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>學歷</th>
+                            <th>學校名稱</th>
+                            <th>系所</th>
+                            <th>時間</th>
+                        </tr>
+                        <tr>
+                            <th>碩士</th>
+                            <th>國立中興大學</th>
+                            <th>物理所 畢業</th>
+                            <th>2013/9~2015/6</th>
+                        </tr>
+                        <tr>
+                            <th>學士</th>
+                            <th>國立高雄師範大學</th>
+                            <th>物理學系 畢業</th>
+                            <th>2009/9~2013/6</th>
+                        </tr>
+                        <tr>
+                            <th>高中</th>
+                            <th>台中一中</th>
+                            <th></th>
+                            <th>2006/9~2009/6</th>
+                        </tr>
+                    </tbody>
                 </table>
                 <hr />
                 <h3>作品</h3>
@@ -57,7 +59,7 @@ class About extends React.Component {
                     <li>攝影</li>
                     <li>閱讀</li>
                 </ul>
-            </div>
+            </div >
         );
     }
 }
