@@ -2,28 +2,32 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions';
-
+import './Login.css';
 
 class Login extends React.Component {
     renderUsernameField(field) {
         return (
             <div>
-                <label>username</label>
-                <input
-                    type="text"
-                    {...field.input}
-                />
+                <p>
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        {...field.input}
+                    />
+                </p>
             </div>
         );
     }
     renderPasswordField(field) {
         return (
             <div>
-                <label>Password</label>
-                <input
-                    type="password"
-                    {...field.input}
-                />
+                <p>
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        {...field.input}
+                    />
+                </p>
             </div>
         );
     }
@@ -37,23 +41,27 @@ class Login extends React.Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <Field
-                    name="username"
-                    value="test"
-                    component={this.renderUsernameField}
-                />
-                <Field
-                    name="password"
-                    component={this.renderPasswordField}
-                />
-                <button type="submit">Submit</button>
-            </form>
+            <div className="form">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <Field
+                        name="username"
+                        value="test"
+                        component={this.renderUsernameField}
+                    />
+                    <Field
+                        name="password"
+                        component={this.renderPasswordField}
+                    />
+                    {/* <button type="submit">Submit</button> */}
+                    <input type="submit" value="sign in" />
+                </form>
+            </div>
         );
     }
 }
 export default reduxForm({
     form: 'loginForm'
 })(
-    connect(null,{loginUser})(Login)
-);
+    connect(null, { loginUser })(Login)
+    );

@@ -1,4 +1,4 @@
-/* @import url(normalize.css); */
+@import url(normalize.css);
 *{
     box-sizing: border-box;
     font-family: sans-serif;
@@ -62,7 +62,9 @@ pre{
 
 
 
-/*    for all page end*/
+
+
+
 
 /* home page  */
 .home a{
@@ -126,48 +128,6 @@ pre{
     clear: both;
 }
 
-
-/*    about page    */
-.about div.introduction{
-    margin: 0 auto;
-    width: 67%;
-    padding-bottom: 80px;
-    font-size: 1.2em;
-    font-family:Tahoma, Geneva, sans-serif;
-}
-.about div.introduction a{
-    text-decoration: none;
-    color: rgba(0,0,255,.7);
-}
-.about div.introduction a:hover{
-    text-decoration:underline;
-}
-
-.about h2{
-    font-size: 2em;
-    font-weight: normal;
-    border-bottom: dotted 2px rgba(5,5,5,.5);
-    padding-bottom: 4px;    
-    margin: 25px 0;
-}
-.about table{
-    background-color: #eeeeee;
-    width: 75%;
-    margin-left: 30px;
-    border-collapse: collapse;
-}
-.about th{
-    font-weight: normal;
-    width: 30%;
-    padding: 5px 5px;
-}
-.about th:first-child{
-    width: 10%;
-    text-align: left;
-}
-.about tr:first-child th{
-    background-color: #cccccc;
-}
 
 /*    contact page    */
 .contact div.form{
@@ -290,60 +250,12 @@ pre{
 }
 
 /*    login && add article && modify page   */
-.login div.form{
-    margin: 0 auto;
-    width: 50%;
-    margin: 0 auto;
-    padding-bottom: 120px;
-    font-size: 1.2em;
-    font-family:Tahoma, Geneva, sans-serif;
-}
 
-.login h2{
-    font-size: 2em;
-    font-weight: normal;
-    border-bottom: dotted 2px rgba(5,5,5,.5);
-    padding-bottom: 4px;	
-    margin: 25px 0;
-}
 
-.login label {
-    margin-bottom: 25px;	
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-    text-align: right;
-    margin-right: 20px;
-    margin-top: 5px;
-    font-weight: bold;
-}
 
-.login input[type="text"], 
-.login input[type="password"] {
-    border-radius: 10px;
-    border: none;
-    background-color: rgba(0,0,90,.3);
-    color: rgba(0,0,255,1);
-    width: 30%;
-    padding: 5px;
-}
 
-.login input[type="text"]:focus, 
-.login input[type="password"]:focus {
-    background-color: #ffffff;
 
-}
-.login input[type="submit"] {
-    margin-left: 220px;
-    padding: 10px 25px;
-    font-size: 1em;
-    color: black;
-    background: rgb(0,102,153);
-    background: linear-gradient(to bottom, rgba(5,5,5,.1) 40%, rgba(255,255,255,.5));
-    background: -webkit-linear-gradient(to bottom, rgba(55,55,55,.1) 40%, rgba(255,255,255,.5));
-    border-radius: 5px;
-    box-shadow: 0 0 4px white;
-}
+
 
 
 /*    login end    */
@@ -438,34 +350,7 @@ pre{
 
 /*    tutorial end    */
 
-footer{
-    clear: both;
-    background-color: #333;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-footer p{    /*change font-family, add link(linkin, github)*/
-    font-weight: bold;
-    color: white;
-    font-size: 1em;
-    margin: 0 auto;
-    padding: 20px 0px 20px 200px;
-    display: inline-block;
-}
 
-footer img{
-    float: right;
-    margin-right: 30px;
-    margin-top: 13px;
-    transform: rotate(0deg);
-    transition-property: transform;
-    transition-duration: .7s;
-}
-footer img:hover{
-    transform: rotate(360deg);
-}
 
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import './Footer.css';
+import githubMark from './GitHub-Mark-Light.png';
 
 class Footer extends React.Component {
     render() {
@@ -7,7 +9,7 @@ class Footer extends React.Component {
                 <footer>
                     <p>Copyright © 2017 Lionel</p>
                     <a href="https://github.com/Lionel223">
-                        {/*<img src="../images/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" />*/}
+                        <img alt="" src={githubMark} />
                     </a>
                 </footer>
             </div>

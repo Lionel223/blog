@@ -1,0 +1,31 @@
+footer{
+    clear: both;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+footer p{    /*change font-family, add link(linkin, github)*/
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+    margin: 0 auto;
+    padding: 20px 0px 20px 200px;
+    display: inline-block;
+}
+
+footer img{
+    float: right;
+    margin-right: 30px;
+    margin-top: 13px;
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-duration: .7s;
+}
+footer img:hover{
+    transform: rotate(360deg);
+}
+img {
+    border-style: none;
+}
