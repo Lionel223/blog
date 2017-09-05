@@ -7,20 +7,23 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((user, done) => {
-    done(null, user.logined);
+    done(null, user);
 });
 
 passport.use(new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
 }, function (username, password, done) {
-    user = keys.users[username];
-    if (user == null) {
+    userInfo = keys.users[username];
+    if (userInfo == null) {
         return done(null, false, { message: 'Invalid user' });
     };
-    if (user.password !== password) {
+    if (userInfo.password !== password) {
         return done(null, false, { message: 'Invalid password' });
     };
+
+    let user = {};
+    user.username = userInfo.username;
     user.logined = true;
     done(null, user);
 }));

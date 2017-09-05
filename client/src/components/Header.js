@@ -5,10 +5,6 @@ import * as actions from '../actions';
 import './Header.css';
 
 class Header extends React.Component {
-    componentDidMount() {
-        this.props.fetchUser();
-    }
-
     isLogin() {
         console.log(this.props.auth);
         switch (this.props.auth) {
@@ -22,7 +18,7 @@ class Header extends React.Component {
                 return ([
                     <li key='1' className="loginLink"><Link to="/api/logout">sign out</Link></li>,                    
                     <li key='2' className="addLink"><NavLink to="/add_article">add article</NavLink></li>,
-                    <li key='3' className="name">Welcome!{this.props.auth}</li>
+                    <li key='3' className="name">Welcome!{this.props.auth.username}</li>
                 ]);
         }
     }
