@@ -18,18 +18,18 @@ ul.navbar li.more{
 
 
 header>ul>li>a,
-.name,
-.homeLink,
-.aboutLink,
-.contactLink,
-.tutorialLink {
+header .name,
+header .homeLink,
+header .aboutLink,
+header .contactLink,
+header .tutorialLink {
     display:block;
     text-align:center;
     padding:10px 20px;
 }
 .more, .drop_down {display:none;}
 
-.active{
+header .active{
     border-bottom:3px solid white;
 }
 ul.navbar li a, ul.navbar li{
@@ -60,6 +60,6 @@ ul.navbar>li>a:hover{
 .head_description a{
     color: white;
 }
-a{
+.head_description a{
     text-decoration: none;
 }

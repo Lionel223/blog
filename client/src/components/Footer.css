@@ -26,6 +26,6 @@ footer img{
 footer img:hover{
     transform: rotate(360deg);
 }
-img {
+footer img {
     border-style: none;
 }

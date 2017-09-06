@@ -7,7 +7,6 @@ import stylesheet from './Add_article.css';
 
 class Add_article extends React.Component {
 
-
     onSubmit(values) {
         console.log(values);
     }
