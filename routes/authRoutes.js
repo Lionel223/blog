@@ -5,7 +5,6 @@ module.exports = (app) => {
         '/api/login',
         passport.authenticate('local'),(req, res) => {
             res.json({redirectURI: "/"}) 
-            // res.redirect('/');
         }
 
         // passport.authenticate('local')

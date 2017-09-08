@@ -1,31 +1,39 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 class Contact extends React.Component {
+
+    onSubmit(values) {
+        console.log(values);
+    }
+
     render() {
+        const { handleSubmit } = this.props
         return (
-            <div>tmp</div>
-            // <div class="form">
-            // <h2>Contact me</h2>
-            //     <form method="post" action="/apis/contact">
-            //         <p>
-            //             <label>Your Name</label>
-            //             <input type="text" name="Name">
-            //         </p>
-            //         <p>
-            //             <label>phone(or E-mail)</label>
-            //             <input type="text" name="Contact">
-            //         </p>
-            //         <p>
-            //             <label>leave some comment or what you want to say</label>
-            //             <textarea cols="30", rows="15", style="resize:none;", name="Comment" >write some word here!</textarea>
-            //         </p>
-            //         <p>
-            //             <input type="submit" value="送出">
-            //         </p>
-            //     </form>
-            // </div>
+            <div className="form">
+                <h2>Contact me</h2>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <p>
+                        <label>Your Name</label>
+                        <input type="text" name="Name" />
+                    </p>
+                    <p>
+                        <label>phone(or E-mail)</label>
+                        <input type="text" name="Contact" />
+                    </p>
+                    <p>
+                        <label>leave some comment or what you want to say</label>
+                        {/* <textarea cols="30", rows="15", style="resize:none;", name="Comment" >write some word here!</textarea> */}
+                    </p>
+                    <p>
+                        <input type="submit" value="send" />
+                    </p>
+                </form>
+            </div>
         );
     }
 }
 
-export default Contact;
+export default reduxForm({
+    form: 'contactForm'
+})(Contact);

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import './Add_article.css';
 // import {} from '../../actions';
-import stylesheet from './Add_article.css';
-// const  { DOM: { input, select, textarea } } = React
 
 class Add_article extends React.Component {
 
@@ -15,7 +14,6 @@ class Add_article extends React.Component {
         const { handleSubmit } = this.props;
         return (
             <div className="form">
-                <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
                 <h2>Add article</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <p>
@@ -40,11 +38,11 @@ class Add_article extends React.Component {
                         test
                     </p>
                     <h2>
-                        <Field type="text" component="input" name="Topic" placeholder="Topic標題" />
+                        <Field type="text" component="input" name="Topic" placeholder="Topic" />
                     </h2>
-                    <p>
+                    
                         <Field type="text" component="textarea" name="Content"></Field>
-                    </p>
+                    
                     <input type="submit" value="save" />
                 </form>
 
@@ -57,4 +55,4 @@ export default reduxForm({
     form: 'addForm'
 })(
     connect(null, {})(Add_article)
-    )
+)

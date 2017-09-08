@@ -4,11 +4,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-
+require('./models/Blog');
+require('./models/Comment');
 require('./services/passport');
 
-// require('./models/Blog');
-// mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 
 
 require('./routes/authRoutes')(app);
+require('./routes/articleRoutes.js')(app);
 
 // For deploy
 if (process.env.NODE_ENV === 'production') {

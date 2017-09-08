@@ -15,12 +15,11 @@ export const fetchUser = () => {
     }
 }
 
-export const loginUser = (values) => {
+export const loginUser = (values, history) => {
     return (dispatch) => {
         axios.post('/api/login', values)
             .then((res) => {
-                console.log('~~~~');
-                console.log(res);
+                history.push('/');
                 dispatch({
                     type: LOGIN_USER,
                     payload: res.data

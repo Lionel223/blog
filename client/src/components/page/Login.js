@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import { loginUser } from '../../actions';
 import './Login.css';
 
@@ -31,9 +32,11 @@ class Login extends React.Component {
             </div>
         );
     }
-
+    
     onSubmit(values) {
-        this.props.loginUser(values);
+        const {history} = this.props;
+        this.props.loginUser(values,history);
+        // this.props.history.push('/');
     }
 
 
@@ -61,5 +64,5 @@ class Login extends React.Component {
 export default reduxForm({
     form: 'loginForm'
 })(
-    connect(null, { loginUser })(Login)
+    connect(null, { loginUser })(withRouter(Login))
     );
