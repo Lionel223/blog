@@ -26,12 +26,12 @@ module.exports = (app) => {
 
     // create article
     app.post('/api/article', async (req, res) => {
-        const { classification, topic, article } = req.body;
+        const { classification, topic, content } = req.body;
 
         const blog = new Blog({
             Classification: classification,
             Topic: topic,
-            Article: article,
+            Article: content,
             CreateDate: Date.now()
         });
 

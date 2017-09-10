@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 
 class Contact extends React.Component {
 
@@ -14,6 +14,7 @@ class Contact extends React.Component {
                 <h2>Contact me</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <p>
+                        {/* <Field></Field> */}
                         <label>Your Name</label>
                         <input type="text" name="Name" />
                     </p>

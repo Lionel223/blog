@@ -1,13 +1,33 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './Add_article.css';
-// import {} from '../../actions';
+// import Add_article_field from './Add_article/Add_article_field';
+import * as actions from '../../actions';
 
 class Add_article extends React.Component {
+    renderClassification(props) {
+        return ['HTML', 'Javascript', 'Node', 'Linux', 'Database', 'test'].map((classification) => {
+            return (
+                <span key={classification}>
+                    <Field
+                        name='classification'
+                        component="input"
+                        type="radio"
+                        value={classification}
+                    />
+                    {' '}
+                    {classification}
+                    {' '}
+                </span>
+            );
+        });
+    }
 
     onSubmit(values) {
-        console.log(values);
+        const { history } = this.props;
+        this.props.addArticle(values, history);
     }
 
     render() {
@@ -16,33 +36,14 @@ class Add_article extends React.Component {
             <div className="form">
                 <h2>Add article</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                    <p>
-                        <span>Select a classification</span>
-                        <Field name="Classification" component="input" type="radio" value="HTML" />
-                        {' '}
-                        HTML
-                        <Field name="Classification" component="input" type="radio" value="Javascript" />
-                        {' '}
-                        Javascript
-                        <Field name="Classification" component="input" type="radio" value="Node" />
-                        {' '}
-                        Node
-                        <Field name="Classification" component="input" type="radio" value="Linux" />
-                        {' '}
-                        Linux
-                        <Field name="Classification" component="input" type="radio" value="Database" />
-                        {' '}
-                        Database
-                        <Field name="Classification" component="input" type="radio" value="test" />
-                        {' '}
-                        test
-                    </p>
+                    <label>Select a classification</label>
+                    {this.renderClassification()}
                     <h2>
-                        <Field type="text" component="input" name="Topic" placeholder="Topic" />
+                        <Field type="text" component="input" name="topic" placeholder="Topic" />
                     </h2>
-                    
-                        <Field type="text" component="textarea" name="Content"></Field>
-                    
+
+                    <Field type="text" component="textarea" name="content"></Field>
+
                     <input type="submit" value="save" />
                 </form>
 
@@ -51,8 +52,19 @@ class Add_article extends React.Component {
     }
 }
 
+function validate(values) {
+    const errors = {};
+    ['classification', 'topic', 'content'].forEach(name => {
+        if (!values[name]) {
+            errors[name] = `You should provide ${name}`;
+        }
+    });
+    return errors;
+}
+
 export default reduxForm({
-    form: 'addForm'
+    validate,
+    form: 'addArticleForm'
 })(
-    connect(null, {})(Add_article)
-)
+    connect(null, actions)(withRouter(Add_article))
+    )
