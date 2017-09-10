@@ -5,7 +5,6 @@ export default function (state = null, action) {
         case FETCH_USER:
             return action.payload || false;
         default:
-        // console.log(action.payload);
             return state;
     }
 }

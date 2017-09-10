@@ -7,7 +7,7 @@ import './Add_article.css';
 import * as actions from '../../actions';
 
 class Add_article extends React.Component {
-    renderClassification(props) {
+    renderClassification() {
         return ['HTML', 'Javascript', 'Node', 'Linux', 'Database', 'test'].map((classification) => {
             return (
                 <span key={classification}>

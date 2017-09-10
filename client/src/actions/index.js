@@ -4,6 +4,7 @@ export const FETCH_USER = 'fetch_user';
 export const LOGIN_USER = 'login_user';
 
 export const ADD_ARTICLE = 'add_article';
+export const FETCH_POST = 'fetch_post';
 
 export const fetchUser = () => {
     return (dispatch) => {
@@ -26,15 +27,16 @@ export const loginUser = (values, history) => {
                     payload: res.data
                 })
                 history.push('/');
-            }).catch(err=> {
+            }).catch(err => {
                 history.push('/');
                 console.log(err);
             })
     }
 }
-export const addArticle = (values,history) => {
+
+export const addArticle = (values, history) => {
     return (dispatch) => {
-        axios.post('/api/article',values)
+        axios.post('/api/article', values)
             .then((res) => {
                 dispatch({
                     type: ADD_ARTICLE,
@@ -44,6 +46,18 @@ export const addArticle = (values,history) => {
             }).catch(err => {
                 history.push('/');
                 console.log(err);
+            })
+    }
+}
+
+export const fetchPost = () => {
+    return (dispatch) => {
+        axios.get('/api/article')
+            .then((res) => {
+                dispatch({
+                    type: FETCH_POST,
+                    payload: res.data
+                })
             })
     }
 }
