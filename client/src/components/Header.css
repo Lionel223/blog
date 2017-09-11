@@ -51,6 +51,11 @@ ul.navbar>li>a:hover{
     background-color: rgb(93,43,78); 
     background-image: -webkit-linear-gradient(right, rgb(93,43,78), rgb(8,2,50));
 }
+
+.hide{
+    display: none;
+}
+
 .head_description h1{
     line-height: 0;
     font-size: 3em;

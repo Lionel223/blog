@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link,NavLink } from 'react-router-dom';
+import { Link,NavLink,withRouter } from 'react-router-dom';
 import * as actions from '../actions';
 import './Header.css';
 
@@ -41,8 +41,8 @@ class Header extends React.Component {
                 {/* <li className="more_nav"><a href="/users/add_article">add article</a></li> */}
                 {/* <li className="more_nav"><a href="/users/signin">sign in</a></li> */}
                 {/* </ul> */}
-
-                <div className="head_description">
+                
+                <div className={`head_description ${this.props.location.pathname==="/tutorial"?'hide':''}`}>
                     <h1><Link to="/">Lionel's blog</Link></h1>
                 </div>
             </header>
@@ -54,4 +54,4 @@ function mapStateToProps(state) {
     return { auth: state.auth };
 }
 
-export default connect(mapStateToProps,actions)(Header);
+export default connect(mapStateToProps,actions)(withRouter(Header));
