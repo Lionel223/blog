@@ -34,6 +34,8 @@ class Login extends React.Component {
     onSubmit(values) {
         const { history } = this.props;
         this.props.loginUser(values, history);
+        history.push('/');
+        window.location.reload(); 
     }
 
     render() {

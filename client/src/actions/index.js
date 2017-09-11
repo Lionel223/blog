@@ -30,9 +30,7 @@ export const loginUser = (values, history) => {
                     type: LOGIN_USER,
                     payload: res.data
                 })
-                history.push('/');
             }).catch(err => {
-                history.push('/');
                 console.log(err);
             })
     }
@@ -71,9 +69,9 @@ export const selectPost = (post) => {
         axios.get(`/api/article/${post._id}`)
             .then(res => {
                 dispatch({
-                    type:FETCH_ACTIVE_POST,
+                    type: FETCH_ACTIVE_POST,
                     payload: res.data
-                })
+                })                
             })
     }
 }

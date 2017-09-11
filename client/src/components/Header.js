@@ -16,7 +16,7 @@ class Header extends React.Component {
                 );
             default:
                 return ([
-                    <li key='1' className="loginLink"><Link to="/api/logout">sign out</Link></li>,                    
+                    <li key='1' className="loginLink"><a href="/api/logout">sign out</a></li>,                    
                     <li key='2' className="addLink"><NavLink to="/add_article">add article</NavLink></li>,
                     <li key='3' className="name">Welcome!{this.props.auth.username}</li>
                 ]);
@@ -54,4 +54,4 @@ function mapStateToProps(state) {
     return { auth: state.auth };
 }
 
-export default connect(mapStateToProps,actions)(withRouter(Header));
+export default withRouter(connect(mapStateToProps,actions)(Header));
