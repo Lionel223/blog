@@ -27,7 +27,8 @@ app.use(bodyParser.json());
 
 
 require('./routes/authRoutes')(app);
-require('./routes/articleRoutes.js')(app);
+require('./routes/articleRoutes')(app);
+require('./routes/commentRoutes')(app);
 
 // For deploy
 if (process.env.NODE_ENV === 'production') {

@@ -8,6 +8,8 @@ export const FETCH_POST = 'fetch_post';
 
 export const FETCH_ACTIVE_POST = 'fetch_active_post';
 
+export const SAVE_COMMENT = 'save_comment';
+
 export const fetchUser = () => {
     return (dispatch) => {
         axios.get('/api/current_user')
@@ -74,7 +76,18 @@ export const selectPost = (post) => {
                 })
             })
     }
-
-    // app.get('/api/article/:id'
-    // console.log(post);
 }
+
+export const saveComment = (values, history) => {
+    return (dispatch) => {
+        axios.post('/api/comment',values)
+            .then(res => {
+                dispatch({
+                    type:SAVE_COMMENT,
+                    payload: res.data
+                })
+                history.push('/');
+            })
+    }
+}
+// SAVE_COMMENT

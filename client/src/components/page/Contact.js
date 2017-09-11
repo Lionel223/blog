@@ -1,34 +1,39 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import * as actions from '../../actions';
+
+import './Contact.css';
 
 class Contact extends React.Component {
 
     onSubmit(values) {
-        console.log(values);
+        const {history} = this.props;
+        this.props.saveComment(values,history);
     }
 
     render() {
-        const { handleSubmit } = this.props
+        const { handleSubmit } = this.props;
         return (
-            <div className="form">
+            <div className="contact">
                 <h2>Contact me</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                    <p>
-                        {/* <Field></Field> */}
+                    <div>
                         <label>Your Name</label>
-                        <input type="text" name="Name" />
-                    </p>
-                    <p>
+                        <Field type="text" component="input" name="name" />
+                    </div>
+                    <div>
                         <label>phone(or E-mail)</label>
-                        <input type="text" name="Contact" />
-                    </p>
-                    <p>
-                        <label>leave some comment or what you want to say</label>
+                        <Field type="text" component="input" name="contact" />
+                    </div>
+                    <div>
+                        <label>comment or suggestion</label>
+                        <Field type="text" component="textarea" name="comment" />
                         {/* <textarea cols="30", rows="15", style="resize:none;", name="Comment" >write some word here!</textarea> */}
-                    </p>
-                    <p>
-                        <input type="submit" value="send" />
-                    </p>
+                    </div>
+
+                    <input type="submit" value="send" />
                 </form>
             </div>
         );
@@ -37,4 +42,4 @@ class Contact extends React.Component {
 
 export default reduxForm({
     form: 'contactForm'
-})(Contact);
+})(connect(null, actions)(withRouter(Contact)));
