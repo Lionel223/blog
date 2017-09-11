@@ -178,62 +178,16 @@ pre{
     box-shadow: 0 0 4px white;
 }
 
-/*    login && add article && modify page   */
-
-
-
-
-
-
-
-
-/*    login end    */
-
 
 /*    tutorial page    */
-.tutorial div.contentWrapper{
-    display: flex;
-    align-items: stretch;
-    background-color:#222; 
-    margin: 0;
-}
+
 /*left bar*/
-.tutorial div.left_nav { 
-    color: white;
-    flex: 1;
-    text-align: center;
-    padding-bottom: 50px;
-    min-height: 1000px;
-}
+
 /*right content*/
-.tutorial div.main{
-    text-align: center;
-    flex: 3;
-    padding: 0px 5% 100px 5%;
-    background-image: linear-gradient(to bottom, rgb(176,194,213), white);
-}
 
 
-.tutorial .left_nav ul.left_bar li{
-    text-decoration: none;
-    list-style-type:none;
-    text-align: left;
-    margin:0;
-    padding: 0;
-    font-size: 20px;
-}
-/* 左側nav調整 */
-.tutorial .reveal *{display: none;}
-.tutorial .handle{display:block;}
-.tutorial .left_bar a{
-    text-decoration: none;
-    color: white;
-}
-.tutorial .slide_btn{
-    -webkit-writing-mode: vertical-lr;
-    writing-mode: vertical-lr;
-    display: none;
-}
+
+
 
 @media (max-width:700px) {
     div.contentWrapper{

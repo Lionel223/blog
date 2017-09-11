@@ -6,6 +6,8 @@ export const LOGIN_USER = 'login_user';
 export const ADD_ARTICLE = 'add_article';
 export const FETCH_POST = 'fetch_post';
 
+export const FETCH_ACTIVE_POST = 'fetch_active_post';
+
 export const fetchUser = () => {
     return (dispatch) => {
         axios.get('/api/current_user')
@@ -60,4 +62,19 @@ export const fetchPost = () => {
                 })
             })
     }
+}
+
+export const selectPost = (post) => {
+    return (dispatch) => {
+        axios.get(`/api/article/${post._id}`)
+            .then(res => {
+                dispatch({
+                    type:FETCH_ACTIVE_POST,
+                    payload: res.data
+                })
+            })
+    }
+
+    // app.get('/api/article/:id'
+    // console.log(post);
 }

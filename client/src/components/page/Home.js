@@ -5,7 +5,6 @@ import './Home.css'
 
 class Home extends React.Component {
     componentDidMount() {
-        console.log(this.props.posts);
         this.props.fetchPost();
     }
 
@@ -26,7 +25,7 @@ class Home extends React.Component {
     render() {
         if (!this.props.posts) {
             return (
-                <p className="main_page">~~~~~~~~~~~~~~~~~~~~~~it...</p>
+                <p className="main_page">wait...</p>
             );
         }
 
