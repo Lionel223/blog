@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Contact = mongoose.model('contact');
+const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = (app) => {
     app.post('/api/comment', (req, res) => {
@@ -15,7 +16,7 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/api/comment', (req,res) => {
+    app.get('/api/comment',requireLogin, (req,res) => {
         Contact.find()
             .then(comment => {
                 res.send(comment);

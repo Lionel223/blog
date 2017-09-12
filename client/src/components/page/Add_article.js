@@ -26,12 +26,16 @@ class Add_article extends React.Component {
     }
 
     onSubmit(values) {
-        const { history } = this.props;
+        const {history} = this.props;
         this.props.addArticle(values, history);
     }
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit,auth } = this.props;
+        
+        if(!auth){
+            return<div></div>;
+        }
         return (
             <div className="form">
                 <h2>Add article</h2>
@@ -62,9 +66,15 @@ function validate(values) {
     return errors;
 }
 
+function mapStateToProps(state){
+    return {
+        auth: state.auth
+    };
+}
+
 export default reduxForm({
     validate,
     form: 'addArticleForm'
 })(
-    connect(null, actions)(withRouter(Add_article))
+    connect(mapStateToProps, actions)(withRouter(Add_article))
     )

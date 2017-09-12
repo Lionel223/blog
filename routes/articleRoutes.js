@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Blog = mongoose.model('blog');
+const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = (app) => {
 
@@ -25,7 +26,7 @@ module.exports = (app) => {
     })
 
     // create article
-    app.post('/api/article', async (req, res) => {
+    app.post('/api/article',requireLogin, async (req, res) => {
         const { classification, topic, content } = req.body;
 
         const blog = new Blog({
@@ -40,7 +41,7 @@ module.exports = (app) => {
     });
 
     // delete article
-    app.delete('/api/article/:id', (req, res) => {
+    app.delete('/api/article/:id',requireLogin, (req, res) => {
         const id = req.params.id;
 
         Blog.findByIdAndRemove(id)
@@ -53,7 +54,7 @@ module.exports = (app) => {
 
 
     // modify article
-    app.put('/api/article/:id', (req, res) => {
+    app.put('/api/article/:id',requireLogin, (req, res) => {
         const id = req.params.id;
         const { classification, topic, article } = req.body;
 
@@ -68,7 +69,5 @@ module.exports = (app) => {
             }).catch((err) => {
                 res.send(err);
             })
-
     })
-
 }
