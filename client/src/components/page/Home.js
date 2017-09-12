@@ -1,8 +1,8 @@
 import React from 'react';
 import * as actions from '../../actions';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 
 import './Home.css';
 
@@ -15,10 +15,9 @@ class Home extends React.Component {
         return this.props.posts.map(post => {
             return (
                 <div className="main_article" key={post._id}>
-                    <h3>{post.Topic}<span>{post.CreateDate}</span></h3>
+                    <h3>{post.Topic}<span>{moment(post.CreateDate).format('MMM Do YYYY, h:mm a')}</span></h3>
                     <div className="article">{post.Article}</div>
                     <div className="classification">{post.Classification}</div>
-                    {/* <div onClick={() => this.specifyPost(blog._id)}>Read More</div> */}
                     <a onClick={() => this.specifyPost(post)}>Read More</a>
                 </div>
             );

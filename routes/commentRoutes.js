@@ -14,4 +14,13 @@ module.exports = (app) => {
             res.send(comment);
         })
     })
+
+    app.get('/api/comment', (req,res) => {
+        Contact.find()
+            .then(comment => {
+                res.send(comment);
+            }).catch(err => {
+                res.send(err);
+            })
+    })
 }

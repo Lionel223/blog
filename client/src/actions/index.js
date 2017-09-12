@@ -9,6 +9,7 @@ export const FETCH_POST = 'fetch_post';
 export const FETCH_ACTIVE_POST = 'fetch_active_post';
 
 export const SAVE_COMMENT = 'save_comment';
+export const FETCH_COMMENT = 'fetch_comment';
 
 export const fetchUser = () => {
     return (dispatch) => {
@@ -88,4 +89,15 @@ export const saveComment = (values, history) => {
             })
     }
 }
-// SAVE_COMMENT
+
+export const fetchComment = () => {
+    return (dispatch) => {
+        axios.get('/api/comment')
+            .then(res => {
+                dispatch({
+                    type: FETCH_COMMENT,
+                    payload: res.data
+                })
+            })
+    }
+}

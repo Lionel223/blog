@@ -2,21 +2,20 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 
-import './Contact.css';
 
-class Contact extends React.Component {
-
+class ContactForm extends React.Component{
+    
     onSubmit(values) {
-        const {history} = this.props;
-        this.props.saveComment(values,history);
+        const { history } = this.props;
+        this.props.saveComment(values, history);
     }
 
     render() {
         const { handleSubmit } = this.props;
         return (
-            <div className="contact">
+            <div className="contactForm">
                 <h2>Contact me</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <div>
@@ -42,4 +41,4 @@ class Contact extends React.Component {
 
 export default reduxForm({
     form: 'contactForm'
-})(connect(null, actions)(withRouter(Contact)));
+})(connect(null, actions)(withRouter(ContactForm)));

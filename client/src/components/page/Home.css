@@ -17,7 +17,7 @@
     margin: 0px;
 }
 .main_page .main_article span{
-    /* background: url(../images/icon/time.png) no-repeat; */
+    background: url(./time.png) no-repeat;
     background-size: 15px;
     margin-top: 3px;
     padding-left: 20px;
@@ -26,7 +26,7 @@
     font-weight: normal;
 }
 .main_page .classification {
-    /* background: url(../images/icon/www.png) no-repeat; */
+    background: url(./www.png) no-repeat;
     background-size: 15px;
     margin: 0 0 7px 15px;
     padding: 0 0 7px 20px;

@@ -1,0 +1,23 @@
+.contactPage{
+    margin: 0 auto;
+    width: 67%;
+    padding-bottom: 80px;
+    font-size: 1.2em;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+
+.contactPage .page{
+    border: 1px black solid;
+    margin: 50px 0px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.contactPage h3{
+    font-size: 1em;
+    font-weight: normal;
+    /* border-bottom: dotted 2px rgba(5,5,5,.5); */
+    padding-bottom: 4px;	
+    margin: 25px 0;
+}
+

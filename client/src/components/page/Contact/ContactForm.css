@@ -1,4 +1,4 @@
-.contact{
+.contactForm{
     margin: 0 auto;
     width: 67%;
     padding-bottom: 80px;
@@ -6,14 +6,14 @@
     font-family:Tahoma, Geneva, sans-serif;
 }
 
-.contact h2{
+.contactForm h2{
     font-size: 2em;
     font-weight: normal;
     border-bottom: dotted 2px rgba(5,5,5,.5);
     padding-bottom: 4px;	
     margin: 25px 0;
 }
-.contact label {
+.contactForm label {
     margin-bottom: 25px;	
     display: inline-block;
     width: 30%;
@@ -23,7 +23,7 @@
     margin-top: 5px;
     font-weight: bold;
 }
-.contact input[type="text"], .contact textarea {
+.contactForm input[type="text"], .contactForm textarea {
     border-radius: 10px;
     border: none;
     background-color: rgba(0,0,90,.3);
@@ -31,11 +31,11 @@
     width: 60%;
     padding: 5px;
 }
-.contact input[type="text"]:focus, .contact textarea:focus{
+.contactForm input[type="text"]:focus, .contactForm textarea:focus{
     background-color: #ffffff;
 
 }
-.contact input[type="submit"]  {
+.contactForm input[type="submit"]  {
     margin-left: 220px;
     padding: 10px 25px;
     font-size: 1em;
