@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../../actions';
 
-
 import LeftNav from './Left_nav';
 import RightPage from './RightPage';
 

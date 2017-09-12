@@ -6,13 +6,6 @@ module.exports = (app) => {
         passport.authenticate('local'),(req, res) => {
             res.json({redirectURI: "/"}) 
         }
-
-        // passport.authenticate('local')
-
-        // passport.authenticate('local', {
-        //     successRedirect: '/success',
-        //     failureRedirect: '/fail',
-        // })
     );
     app.get('/api/current_user', (req, res) => {
         res.send(req.user);
@@ -20,6 +13,6 @@ module.exports = (app) => {
 
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.redirect('/about');
+        res.redirect('/');
     });
 }

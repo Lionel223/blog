@@ -39,6 +39,17 @@ class ContactForm extends React.Component{
     }
 }
 
+function validate(values) {
+    const errors = {};
+    ['name', 'contact', 'comment'].forEach(name => {
+        if (!values[name]) {
+            errors[name] = `You should provide ${name}`;
+        }
+    });
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'contactForm'
 })(connect(null, actions)(withRouter(ContactForm)));

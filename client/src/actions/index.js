@@ -5,8 +5,8 @@ export const LOGIN_USER = 'login_user';
 
 export const ADD_ARTICLE = 'add_article';
 export const FETCH_POST = 'fetch_post';
-
 export const FETCH_ACTIVE_POST = 'fetch_active_post';
+export const DELETE_POST = 'delete_post';
 
 export const SAVE_COMMENT = 'save_comment';
 export const FETCH_COMMENT = 'fetch_comment';
@@ -76,6 +76,20 @@ export const selectPost = (post) => {
             })
     }
 }
+
+export const deletePost = (id) => {
+    return (dispatch) => {
+        axios.delete(`/api/article/${id}`)
+            .then(res => {
+                dispatch({
+                    type: DELETE_POST,
+                    payload: res.data
+                })
+            })
+    }
+}
+
+
 
 export const saveComment = (values, history) => {
     return (dispatch) => {

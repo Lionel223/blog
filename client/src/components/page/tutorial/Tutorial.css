@@ -12,7 +12,32 @@
     padding-bottom: 50px;
     min-height: 1000px;
 }
+.tutorial .left_nav .left_bar{
+    padding:0 0 0 10px;
+    margin: 0;
+}
 
+.tutorial .left_nav .left_bar .reveal{
+    margin:15px 0 0 0;
+}
+.tutorial .left_nav .left_bar .reveal>li{
+    cursor: pointer;
+}
+
+.hide{display:none}
+
+.tutorial .left_nav .left_bar .item{
+    padding:0;
+}
+
+.tutorial .left_nav .left_bar .item li{
+    padding:2px 0 2px 15px;
+    cursor: pointer;
+}
+.tutorial .left_nav .left_bar .item li:hover{
+    background: white;
+    color: black;
+}
 
 .tutorial .left_nav ul.left_bar li{
     text-decoration: none;
@@ -22,6 +47,9 @@
     padding: 0;
     font-size: 20px;
 }
+
+
+
 /* 左側nav調整 */
 /* .tutorial .reveal *{display: none;} */
 .tutorial .handle{display:block;}
@@ -43,4 +71,20 @@
     flex: 3;
     padding: 0px 5% 100px 5%;
     background-image: linear-gradient(to bottom, rgb(176,194,213), white);
+}
+
+.tutorial .main .top{
+    margin: 20px;
+    float: right;
+}
+
+.tutorial .main .top a{
+    color: blue;
+}
+.tutorial .main .top a:hover{
+    cursor: pointer;
+}
+
+.tutorial .main h1{
+    margin:70px 0 0 0;
 }

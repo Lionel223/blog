@@ -3,6 +3,19 @@ import {connect} from 'react-redux';
 import * as actions from '../../../actions';
 
 class LeftNav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.toggleClass= this.toggleClass.bind(this);
+        this.state = {
+            active: false,
+            each: null
+        };
+    }
+
+    toggleClass(each) {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState, each:each });
+    };
 
     ClassificationFilter(posts) {
         let classification = [];
@@ -20,8 +33,8 @@ class LeftNav extends React.Component {
         return classification.map(each => {
             return (
                 <div key={each} className="reveal">
-                    <li>{each}</li>
-                    <ul>
+                    <li onClick={() => {this.toggleClass(each)}}>{each}</li>
+                    <ul className={`item ${(this.state.active && this.state.each===each) ? 'hide': null}`}>
                         {this.renderSort(each)}
                     </ul>
                 </div>

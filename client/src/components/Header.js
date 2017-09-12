@@ -6,7 +6,6 @@ import './Header.css';
 
 class Header extends React.Component {
     isLogin() {
-        // console.log(this.props.auth);
         switch (this.props.auth) {
             case null:
                 return;
