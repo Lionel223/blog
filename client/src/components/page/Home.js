@@ -9,21 +9,7 @@ import './Home.css';
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchPost();
-        let that = this;
-        window.onload = function(){
-            that.partial_article();
-        }
     }
-
-    partial_article(){
-        var article = document.getElementsByClassName("article");
-        for(let i=0;i<article.length;i++){
-            article[i].textContent = article[i].textContent.substring(0,300)+"...";
-        }
-    };
-    // window.onload = function(){
-    //     partial_article();
-    // }
 
     renderHomePage() {
         return this.props.posts.map(post => {
