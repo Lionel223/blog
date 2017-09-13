@@ -9,14 +9,28 @@ import './Home.css';
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchPost();
+        let that = this;
+        window.onload = function(){
+            that.partial_article();
+        }
     }
+
+    partial_article(){
+        var article = document.getElementsByClassName("article");
+        for(let i=0;i<article.length;i++){
+            article[i].textContent = article[i].textContent.substring(0,300)+"...";
+        }
+    };
+    // window.onload = function(){
+    //     partial_article();
+    // }
 
     renderHomePage() {
         return this.props.posts.map(post => {
             return (
                 <div className="main_article" key={post._id}>
                     <h3>{post.Topic}<span>{moment(post.CreateDate).format('MMM Do YYYY, h:mm a')}</span></h3>
-                    <div className="article">{post.Article}</div>
+                    <div className="article" dangerouslySetInnerHTML={{__html: post.Article}}></div>
                     <div className="classification">{post.Classification}</div>
                     <a onClick={() => this.specifyPost(post)}>Read More</a>
                 </div>

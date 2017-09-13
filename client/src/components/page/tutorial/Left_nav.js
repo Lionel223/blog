@@ -21,7 +21,7 @@ class LeftNav extends React.Component {
         let classification = [];
         var tmp;
         posts.forEach(({ Classification }) => {
-            if (tmp !== Classification) {
+            if (tmp !== Classification && classification.indexOf(Classification)===-1) {
                 tmp = Classification;
                 classification.push(Classification);
             }

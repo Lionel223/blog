@@ -34,8 +34,11 @@
 
 .main_page .article{
     text-align: left;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
+    text-overflow : ellipsis;
+    height: 100px;
+    overflow: hidden;
 }
 .main_page .main_article a{
     cursor: pointer;
