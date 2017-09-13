@@ -35,7 +35,7 @@ div.form {
     height: 267px;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: rgba(0,0,0);
+    background-color: white;
     color: rgba(0,0,255,1);
     height: 573px;
 }
