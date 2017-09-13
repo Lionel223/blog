@@ -18,7 +18,7 @@ class Home extends React.Component {
                     <h3>{post.Topic}<span>{moment(post.CreateDate).format('MMM Do YYYY, h:mm a')}</span></h3>
                     <div className="article" dangerouslySetInnerHTML={{__html: post.Article}}></div>
                     <div className="classification">{post.Classification}</div>
-                    <a onClick={() => this.specifyPost(post)}>Read More</a>
+                    <a className="readMore" onClick={() => this.specifyPost(post)}>Read More</a>
                 </div>
             );
         })

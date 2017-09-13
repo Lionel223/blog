@@ -34,7 +34,7 @@ class LeftNav extends React.Component {
             return (
                 <div key={each} className="reveal">
                     <li onClick={() => {this.toggleClass(each)}}>{each}</li>
-                    <ul className={`item ${(this.state.active && this.state.each===each) ? 'hide': null}`}>
+                    <ul className={`item ${(this.state.active && this.state.each===each)  ? '': 'hide'}`}>
                         {this.renderSort(each)}
                     </ul>
                 </div>

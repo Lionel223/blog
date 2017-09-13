@@ -11,6 +11,26 @@ class RightPage extends React.Component {
         this.props.history.push('/');
     }
 
+    linkRender(singlePost) {
+        if (this.props.auth) {
+            return (
+                <div className="top">
+                    <a href="/users/modify" style={{ textDecoration: "none" }}>
+                        edit
+                    </a>
+                    /
+                    <a onClick={() => this.deletePost(singlePost._id)} style={{ textDecoration: "none" }}>
+                        delete
+                    </a>
+                    {' '}this article
+                </div>
+            );
+        }
+        return (
+            <div className="top"></div>
+        );
+    }
+
     render() {
         const { singlePost } = this.props;
         if (!singlePost) {
@@ -18,9 +38,11 @@ class RightPage extends React.Component {
                 <div className="main">Select an article</div>
             );
         }
+
         return (
             <div className="main">
-                <div className="top">
+                {this.linkRender(singlePost)}
+                {/* <div className="top">
                     <a href="/users/modify" style={{textDecoration:"none"}}>
                         edit
                     </a>
@@ -29,12 +51,10 @@ class RightPage extends React.Component {
                         delete
                     </a>
                     {' '}this article
-                </div>
+                </div> */}
 
                 <h1>{singlePost.Topic}</h1>
-                <div style={{textAlign: "left"}}>
-                    {singlePost.Article}
-                </div>
+                <div style={{textAlign: "left"}} dangerouslySetInnerHTML={{__html: singlePost.Article}}></div>
                 <p style={{textAlign:"right"}}>
                     {moment(singlePost.CreateDate).format('MMM Do YYYY, h:mm a')}
                 </p>
@@ -44,7 +64,10 @@ class RightPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { singlePost: state.singlePost };
+    return { 
+        singlePost: state.singlePost,
+        auth: state.auth
+    };
 }
 
 export default withRouter(connect(mapStateToProps,actions)(RightPage));
