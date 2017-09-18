@@ -8,7 +8,7 @@ module.exports = (app) => {
     app.get('/api/article', (req, res) => {
         Blog.find()
             .then((blogs) => {
-                res.send(blogs);
+                res.send(blogs.sort((a, b) => new Date(b.CreateDate) - new Date(a.CreateDate)));
             }).catch(err => {
                 res.send(err);
             })
