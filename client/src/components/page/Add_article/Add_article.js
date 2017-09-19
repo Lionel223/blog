@@ -11,19 +11,6 @@ import renderTopic from './Add_article_field/renderTopic';
 import renderContent from './Add_article_field/renderContent';
 
 class Add_article extends React.Component {
-    renderClassification() {
-        return ['HTML', 'Javascript', 'Node', 'Linux', 'Database', 'test'].map((classification) => {
-            return (
-                <Field 
-                    key={classification}
-                    name='classification'
-                    type="radio"
-                    value={classification}
-                    component={renderClassification}
-                />
-            );
-        });
-    }
 
     onSubmit(values) {
         const { history } = this.props;
@@ -41,9 +28,15 @@ class Add_article extends React.Component {
                 <h2>Add article</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <label>Select a classification</label>
-                    {this.renderClassification()}
+                    <Field
+                        name="classification"
+                        component={renderClassification}
+                        options={[
+                            'HTML', 'Javascript', 'Node', 'Linux', 'Database', 'test'
+                        ]}
+                        required={true}
+                    />
 
-                    {/* tmp */}
                     <h2>
                         <Field
                             name="topic"

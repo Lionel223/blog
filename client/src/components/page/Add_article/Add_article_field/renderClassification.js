@@ -1,15 +1,10 @@
 import React from 'react';
 
-export default ({ input, value, type,meta }) => {
-    console.log(input);
+export default ({ input, options ,meta }) => {
     return (
-        <span>
-            <input
-                type={type}
-                onChange={input.onChange}
-                checked={input.value === {value}}
-            />
-            {' '}{input.value}{' '}
-        </span>
+        <div> 
+            {options.map(o=> <label key={o}><input type="radio" {...input} value={o} checked={o === input.value} />{o}</label>)}
+            {meta.touched && meta.error && <span className="error">{meta.error}</span>}
+        </div>
     );
 }
