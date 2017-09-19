@@ -11,7 +11,7 @@ import Home from './page/Home';
 import About from './page/About';
 import Contact from './page/Contact/Contact';
 import Tutorial from './page/tutorial/Tutorial';
-import Add_article from './page/Add_article';
+import Add_article from './page/Add_article/Add_article';
 
 
 class App extends React.Component {

@@ -3,6 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../../actions';
+import renderField from './ContactField';
+import renderField_textarea from './ContactField_textarea';
 
 
 class ContactForm extends React.Component{
@@ -18,19 +20,29 @@ class ContactForm extends React.Component{
             <div className="contactForm">
                 <h2>Contact me</h2>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                    <div>
-                        <label>Your Name</label>
-                        <Field type="text" component="input" name="name" />
-                    </div>
-                    <div>
-                        <label>phone(or E-mail)</label>
-                        <Field type="text" component="input" name="contact" />
-                    </div>
-                    <div>
+                    <Field 
+                        name="name"
+                        type="text"
+                        component={renderField}
+                        label="Your Name"
+                    />
+                    <Field 
+                        name="contact"
+                        type="text"
+                        component={renderField}
+                        label="phone(or E-mail)"
+                    />
+                    <Field 
+                        name="comment"
+                        type="text"
+                        component={renderField_textarea}
+                        label="comment or suggestion"
+                    />
+                    {/* <div>
                         <label>comment or suggestion</label>
                         <Field type="text" component="textarea" name="comment" />
-                        {/* <textarea cols="30", rows="15", style="resize:none;", name="Comment" >write some word here!</textarea> */}
-                    </div>
+                        <textarea cols="30", rows="15", style="resize:none;", name="Comment" >write some word here!</textarea>
+                    </div> */}
 
                     <input type="submit" value="send" />
                 </form>
